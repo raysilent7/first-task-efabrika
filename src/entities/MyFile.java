@@ -8,9 +8,9 @@ public class MyFile {
     private String name;
     private String path;
     private long size;
-    private Object dtCreation;
+    private Long dtCreation;
 
-    public MyFile(String name, String path, long size, Object dtCreation) {
+    public MyFile(String name, String path, long size, Long dtCreation) {
         this.name = name;
         this.path = path;
         this.size = size;
@@ -33,12 +33,13 @@ public class MyFile {
         this.size = size;
     }
 
-    public Object getDtCreation() {
-        return dtCreation;
+    public Date getDtCreation() {
+        Date date = new Date(dtCreation);
+        return date;
     }
 
-    public void setDtCreation(Date dtCreation) {
-        this.dtCreation = dtCreation;
+    public long setDtCreation(Long dtCreation) {
+        return dtCreation;
     }
 
     @Override
@@ -57,6 +58,6 @@ public class MyFile {
 
     @Override
     public String toString() {
-        return name + ", " + path + ", " + size + " Bytes, " + dtCreation + "\n";
+        return name + ", " + path + ", " + size + " Bytes, " + getDtCreation() + "\n";
     }
 }
