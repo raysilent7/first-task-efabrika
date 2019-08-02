@@ -16,9 +16,6 @@ public class Main {
         Locale.setDefault(Locale.US);
         try (Scanner sc = new Scanner(System.in)) {
 
-//        FileScanner fs = new FileScanner();
-//        FileReporter fr = new FileReporter();
-
             System.out.print("Enter file full path to analyse: ");
             Path path = Paths.get(sc.nextLine());
 

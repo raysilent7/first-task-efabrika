@@ -15,8 +15,6 @@ import java.util.stream.Stream;
 
 public class FileScanner {
 
-//    List<MyFile> myFiles = new ArrayList<>();
-
     public static List<MyFile> doScan(Path path) {
         List<MyFile> myFiles = new ArrayList<>();
         try (Stream<Path> walk = Files.walk(path)){
@@ -34,8 +32,4 @@ public class FileScanner {
         }
         return myFiles;
     }
-
-//    public List<MyFile> getMyFiles() {
-//        return myFiles;
-//    }
 }
