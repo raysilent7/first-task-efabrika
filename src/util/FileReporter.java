@@ -12,7 +12,7 @@ import static java.nio.file.StandardOpenOption.*;
 
 public class FileReporter {
 
-    public void fileReporter (Path savePath, List<MyFile> myFiles) {
+    public static void generateLog(Path savePath, List<MyFile> myFiles) {
         for (MyFile file : myFiles) {
             try (BufferedWriter writer = Files.newBufferedWriter(savePath, CREATE, APPEND, WRITE)) {
 

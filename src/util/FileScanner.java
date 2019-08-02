@@ -8,15 +8,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileTime;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class FileScanner {
 
-    List<MyFile> myFiles = new ArrayList<>();
+//    List<MyFile> myFiles = new ArrayList<>();
 
-    public void fileCollector (Path path) {
+    public static List<MyFile> doScan(Path path) {
+        List<MyFile> myFiles = new ArrayList<>();
         try (Stream<Path> walk = Files.walk(path)){
 
             List<String> files = walk.map(x -> x.toString()).collect(Collectors.toList());
@@ -30,9 +32,10 @@ public class FileScanner {
         catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public List<MyFile> getMyFiles() {
         return myFiles;
     }
+
+//    public List<MyFile> getMyFiles() {
+//        return myFiles;
+//    }
 }
